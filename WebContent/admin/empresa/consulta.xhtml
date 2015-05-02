@@ -1,0 +1,194 @@
+<?xml version='1.0' encoding='ISO-8859-1' ?>
+<ui:composition template="/templates/LayoutPadrao.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+	<ui:define name="cabecalho">
+		<ui:include src="/templates/CabecalhoAdmin.xhtml" />
+	</ui:define>
+	<ui:define name="conteudo">
+		<p:panel styleClass="panel">
+
+			<!-- // AQUI TEM O NOME CONTEUDO QUE É O LOCAL DO TEMPLATE-->
+			<f:view>
+				<p:fieldset legend="#{ptpEmpresa.consultar}">
+					<h:form>
+						<p:tab id="personal" title="Dados">
+							<p:messages id="messages0" showDetail="false" autoUpdate="true"
+								closable="true" />
+							<p:panel header="#{ptpgeral.pnlDados}">
+								<h:panelGrid columns="4" cellpadding="3" styleClass="panelGrid"
+									id="grid0" columnClasses="label, value">
+
+									<h:outputLabel value="#{ptpEmpresa.nome}:" />
+
+									<p:inputText id="txtnome" label="#{ptpEmpresa.nome}"
+										required="true" value="#{empresaBean.empresa.nome}" size="50"
+										maxlength="255" />
+
+									<h:outputLabel value="#{ptpEmpresa.cnpj}:" />
+
+									<p:inputText id="txtCnpj" label="#{ptpEmpresa.cnpj}"
+										required="true" maxlength="14" size="50"
+										value="#{empresaBean.empresa.cnpj}">
+										<f:validateLength minimum="14" />
+										<f:validator validatorId="cnpjValidator" />
+									</p:inputText>
+
+								</h:panelGrid>
+							</p:panel>
+						</p:tab>
+
+						<p:tab id="address" title="Endereço">
+							<p:panel header="#{ptpgeral.pnlEndereco}">
+
+								<h:panelGrid columns="4" cellpadding="3" styleClass="panelGrid"
+									id="grid1" columnClasses="label, value">
+
+
+									<h:outputText value="#{ptpEmpresa.rua} :" />
+
+									<p:inputText id="txtRua" label="#{ptpEmpresa.rua}"
+										required="true" value="#{empresaBean.empresa.rua}" size="50"
+										maxlength="255" />
+
+									<h:outputText value="#{ptpEmpresa.numero}" />
+
+									<p:inputText id="txtNumero" label="#{ptpEmpresa.numero}"
+										required="true" value="#{empresaBean.empresa.numero}"
+										size="50" maxlength="255" />
+
+									<h:outputText value="#{ptpEmpresa.complemento}:" />
+
+									<p:inputText id="txtComplemento"
+										label="#{ptpEmpresa.complemento}"
+										value="#{empresaBean.empresa.complemento}" size="50"
+										maxlength="255" />
+
+									<h:outputText value="#{ptpEmpresa.bairro}:" />
+
+									<p:inputText id="txtBairro" label="#{ptpEmpresa.bairro}"
+										required="true" value="#{empresaBean.empresa.bairro}"
+										size="50" maxlength="255" />
+
+									<h:outputText value="#{ptpEmpresa.cidade}:" />
+
+									<p:inputText id="txtCidade" label="#{ptpEmpresa.cidade}"
+										required="true" value="#{empresaBean.empresa.cidade}"
+										size="50" maxlength="255" />
+
+									<h:outputText value="#{ptpEmpresa.cep}:" />
+
+									<p:inputMask id="txtCEP" label="#{ptpEmpresa.cep}"
+										required="true" value="#{empresaBean.empresa.cep}" size="50"
+										maxlength="255" mask="99999-999">
+										<f:validateLength minimum="9" />
+									</p:inputMask>
+
+									<h:outputText value="#{ptpEmpresa.uf}:" />
+
+									<p:selectOneMenu id="cmbUF" label="#{ptpEmpresa.uf}"
+										value="#{empresaBean.empresa.uf}" required="true"
+										editable="false" filter="true" filterMatchMode="contains"
+										effect="scale">
+										<f:selectItem itemValue="" itemLabel="Selecione um estado" />
+										<f:selectItem itemValue="AC" itemLabel="AC" />
+										<f:selectItem itemValue="AL" itemLabel="AL" />
+										<f:selectItem itemValue="AP" itemLabel="AP" />
+										<f:selectItem itemValue="AM" itemLabel="AM" />
+										<f:selectItem itemValue="BA" itemLabel="BA" />
+										<f:selectItem itemValue="CE" itemLabel="CE" />
+										<f:selectItem itemValue="DF" itemLabel="DF" />
+										<f:selectItem itemValue="GO" itemLabel="GO" />
+										<f:selectItem itemValue="ES" itemLabel="ES" />
+										<f:selectItem itemValue="MA" itemLabel="MA" />
+										<f:selectItem itemValue="MT" itemLabel="MT" />
+										<f:selectItem itemValue="MS" itemLabel="MS" />
+										<f:selectItem itemValue="MG" itemLabel="MG" />
+										<f:selectItem itemValue="PA" itemLabel="PA" />
+										<f:selectItem itemValue="PB" itemLabel="PB" />
+										<f:selectItem itemValue="PR" itemLabel="PR" />
+										<f:selectItem itemValue="PE" itemLabel="PE" />
+										<f:selectItem itemValue="PI" itemLabel="PI" />
+										<f:selectItem itemValue="RJ" itemLabel="RJ" />
+										<f:selectItem itemValue="RN" itemLabel="RN" />
+										<f:selectItem itemValue="RS" itemLabel="RS" />
+										<f:selectItem itemValue="RO" itemLabel="RO" />
+										<f:selectItem itemValue="RR" itemLabel="RR" />
+										<f:selectItem itemValue="SP" itemLabel="SP" />
+										<f:selectItem itemValue="SC" itemLabel="SC" />
+										<f:selectItem itemValue="SE" itemLabel="SE" />
+										<f:selectItem itemValue="TO" itemLabel="TO" />
+									</p:selectOneMenu>
+
+								</h:panelGrid>
+							</p:panel>
+						</p:tab>
+						<p:tab id="contact" title="Contato">
+							<p:panel header="#{ptpgeral.pnlContato}">
+
+								<h:panelGrid columns="4" styleClass="panelGrid">
+
+									<h:outputLabel value="#{ptpEmpresa.contato}:" />
+
+									<p:inputText id="txtContato" label="#{ptpEmpresa.contato}"
+										value="#{empresaBean.empresa.contato}" size="50"
+										maxlength="255" />
+
+									<h:outputText value="#{ptpEmpresa.foneContato}:" />
+
+									<p:inputMask id="txtFoneContato"
+										label="#{ptpEmpresa.foneContato}"
+										value="#{empresaBean.empresa.foneContato}" size="50"
+										maxlength="255" mask="(99)9999-9999">
+										<f:validateLength minimum="13" />
+									</p:inputMask>
+
+									<h:outputLabel value="#{ptpEmpresa.site}:" />
+
+									<p:inputText id="txtSite" label="#{ptpEmpresa.site}"
+										value="#{empresaBean.empresa.site}" size="50" maxlength="255" />
+
+
+									<h:outputText value="#{ptpEmpresa.fone1}:" />
+
+									<p:inputMask id="txtFone1" label="#{ptpEmpresa.fone1}"
+										value="#{empresaBean.empresa.fone1}" size="50" maxlength="255"
+										mask="(99)9999-9999">
+										<f:validateLength minimum="13" />
+									</p:inputMask>
+
+									<h:outputText value="#{ptpEmpresa.fone2}:" />
+
+									<p:inputMask id="txtFone2" label="#{ptpEmpresa.fone2}"
+										value="#{empresaBean.empresa.fone2}" size="50" maxlength="255"
+										mask="(99)9999-9999">
+										<f:validateLength minimum="13" />
+									</p:inputMask>
+
+
+
+									<h:outputText value="#{ptpEmpresa.email}:" />
+
+									<p:inputText id="txtEmailFaculdade" label="#{ptpEmpresa.email}"
+										required="true" value="#{empresaBean.empresa.email}" size="50"
+										maxlength="255">
+										<f:validator validatorId="emailValidator" />
+									</p:inputText>
+
+
+								</h:panelGrid>
+
+							</p:panel>
+						</p:tab>
+						<p:commandButton id="cmdVoltar" styleClass="cmdGeral"
+							onclick="javascript:history.back(-1);" value="#{ptpgeral.voltar}" />
+					</h:form>
+				</p:fieldset>
+			</f:view>
+		</p:panel>
+	</ui:define>
+</ui:composition>

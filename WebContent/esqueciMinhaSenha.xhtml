@@ -1,0 +1,64 @@
+	<ui:composition template="/templates/LayoutPadrao.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+	
+<ui:define name="conteudo">
+<p:panel styleClass="painel" style="width:600px;">
+
+			<!-- // AQUI TEM O NOME CONTEUDO QUE É O LOCAL DO TEMPLATE-->
+			<f:view>
+				<p:fieldset legend="#{ptpgeral.esqueciPwd}">
+					<h:form id="form">
+						<p:panel>
+							<h:panelGrid columns="4" cellpadding="3" styleClass="colorGrid"
+								id="grid" columnClasses="label, value">
+								<h:outputLabel value="#{ptpgeral.obrigatorio}"
+									styleClass="colorGrid" />
+							</h:panelGrid>
+						</p:panel>
+
+						<p:messages id="messages" showDetail="false" autoUpdate="true" showSummary="true"
+							closable="true" />
+
+						<p:panel header="#{ptpgeral.pnlDados}">
+
+							<h:panelGrid columns="2" cellpadding="3" styleClass="panelGrid"
+								id="grid0" columnClasses="label, value">
+
+								<h:outputLabel value="#{ptpgeral.NMatricula}: *" />
+
+								<p:inputText id="txtmatricula" label="#{ptpgeral.NMatricula}"
+									required="true" maxlength="100" size="25"
+									value="#{alunoBean.aluno.matricula}" styleClass="requiredClass" />
+
+								<h:outputText value="#{ptpaluno.email}: *" />
+
+								<p:inputText id="txtEmail" label="#{ptpaluno.email}"
+									value="#{alunoBean.aluno.email}" size="30" maxlength="255"
+									required="true">
+									<f:validator validatorId="emailValidator" />
+								</p:inputText>
+
+							</h:panelGrid>
+						</p:panel>
+
+						<center>
+						<p:commandButton id="cmdSalvar" value="#{ptpgeral.enviarPwd}"
+							action="#{alunoBean.esqueciMinhaSenha()}" styleClass="cmdGeral"
+							onclick="PrimeFaces.cleanWatermarks();" />
+							</center>
+						
+						
+					</h:form>
+				</p:fieldset>
+			</f:view>
+			
+			<h:outputLink value="./index.xhtml">Voltar</h:outputLink>
+			
+			
+</p:panel>
+</ui:define>
+</ui:composition>

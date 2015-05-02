@@ -1,0 +1,107 @@
+<?xml version='1.0' encoding='ISO-8859-1' ?>
+<ui:composition template="/templates/LayoutPadrao.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+	
+<ui:define name="cabecalho">
+	<ui:include src="/templates/CabecalhoAdmin.xhtml" />
+</ui:define>	
+<ui:define name="conteudo">
+<p:panel styleClass="panel">
+
+			<!-- // AQUI TEM O NOME CONTEUDO QUE É O LOCAL DO TEMPLATE-->
+			<f:view>
+				<p:fieldset legend="#{ptpuser.lista}">
+
+					<h:form>
+
+						<p:messages id="messages" showDetail="false" autoUpdate="true"
+							closable="true" />
+						<div class="conteudoTable">
+
+							<p:dataTable id="dataTable" value="#{usuarioBean.usuarios}"
+								var="dtUser" paginator="true" rows="10"
+								filteredValue="#{usuarioBean.filteredUsuarios}"
+								widgetVar="usuarioTable" emptyMessage="#{ptpgeral.emptyMessage}">
+
+								<f:facet name="header">
+									<p:outputPanel>
+										<h:outputText value="#{ptpgeral.pesqAll}" />
+										<p:inputText id="globalFilter" onkeyup="usuarioTable.filter()" />
+									</p:outputPanel>
+								</f:facet>
+
+								<p:column filterBy="#{dtUser.idUsuario}"
+									filterMatchMode="contains" headerText="#{ptpgeral.id}">
+									<h:outputText value="#{dtUser.idUsuario}" />
+								</p:column>
+
+								<p:column filterBy="#{dtUser.nome}" filterMatchMode="contains"
+									headerText="#{ptpuser.name}">
+									<h:outputText value="#{dtUser.nome}" />
+								</p:column>
+
+								<p:column filterBy="#{dtUser.email}" filterMatchMode="contains"
+									headerText="#{ptpuser.email}">
+									<h:outputText value="#{dtUser.email}" />
+								</p:column>
+
+								<p:column>
+									<f:facet name="header">
+										<h:outputText value="#{ptpuser.userGrupo}" />
+									</f:facet>
+									<p:selectOneMenu id="tipoAcesso" value="#{dtUser.tipoAcesso}"
+										required="true" editable="false" disabled="true"
+										styleClass="fonteNegrito">
+										<f:selectItem itemLabel="Administrador" itemValue="1" />
+										<f:selectItem itemLabel="Normal" itemValue="2" />
+									</p:selectOneMenu>
+								</p:column>
+
+								<h:inputHidden value="#{usuarioBean.usuario.senha}" />
+
+								<p:column>
+									<f:facet name="header">
+										<h:outputText value="#{ptpuser.senha}" />
+									</f:facet>
+									<h:commandLink value="#{ptpgeral.definir}" action="senha">
+										<f:setPropertyActionListener value="#{dtUser}"
+											target="#{usuarioBean.usuario}" />
+									</h:commandLink>
+								</p:column>
+
+								<p:column>
+									<f:facet name="header">
+										<h:outputText value="#{ptpgeral.alterar}" />
+									</f:facet>
+									<h:commandLink value="#{ptpgeral.alterar}" action="alterar">
+										<f:setPropertyActionListener value="#{dtUser}"
+											target="#{usuarioBean.usuario}" />
+									</h:commandLink>
+								</p:column>
+
+								<p:column>
+									<f:facet name="header">
+										<h:outputText value="#{ptpgeral.excluir}" />
+									</f:facet>
+									<h:commandLink value="#{ptpgeral.excluir}"
+										action="#{usuarioBean.excluir()}"
+										onclick="return confirm('#{ptpgeral.confExcluir} #{ptpuser.user}: #{dtUser.nome}');">
+										<f:setPropertyActionListener value="#{dtUser}"
+											target="#{usuarioBean.usuario}" />
+									</h:commandLink>
+								</p:column>
+
+							</p:dataTable>
+
+						</div>
+					</h:form>
+
+				</p:fieldset>
+			</f:view>
+</p:panel>
+</ui:define>
+</ui:composition>

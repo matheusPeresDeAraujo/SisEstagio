@@ -1,0 +1,112 @@
+<?xml version='1.0' encoding='ISO-8859-1' ?>
+<ui:composition template="/templates/LayoutPadrao.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+	
+<ui:define name="cabecalho">
+	<ui:include src="/templates/CabecalhoAdmin.xhtml" />
+</ui:define>	
+<ui:define name="conteudo">
+<p:panel styleClass="panel">
+
+			<!-- // AQUI TEM O NOME CONTEUDO QUE É O LOCAL DO TEMPLATE-->
+			<f:view>
+				<p:fieldset legend="#{ptptermoAditivo.lista}">
+					<h:form>
+						<p:messages id="messages" showDetail="false" autoUpdate="true"
+							closable="true" />
+						<div class="conteudoTable">
+
+							<p:dataTable id="dataTable"
+								value="#{termoAditivoBean.termoAditivos}"
+								var="dtTermoAditivoBeanTable" paginator="true" rows="10"
+								widgetVar="termoDeCompromissoTable"
+								emptyMessage="#{ptpgeral.emptyMessage}"
+								filteredValue="#{termoAditivoBean.filteredTermoAditivo}">
+
+								<f:facet name="header">
+									<p:outputPanel>
+										<h:outputText value="#{ptpgeral.pesqAll}" />
+										<p:inputText id="globalFilter"
+											onkeyup="termoDeCompromissoTable.filter()" />
+									</p:outputPanel>
+								</f:facet>
+
+								<p:column filterBy="#{dtTermoAditivoBeanTable.idTermoAditivo}"
+									filterMatchMode="contains" headerText="#{ptpgeral.id}">
+									<h:outputText value="#{dtTermoAditivoBeanTable.idTermoAditivo}" />
+								</p:column>
+
+								<p:column filterBy="#{dtTermoAditivoBeanTable.protocolo}"
+									filterMatchMode="contains" headerText="#{ptpgeral.protocolo}">
+									<h:outputText value="#{dtTermoAditivoBeanTable.protocolo}" />
+								</p:column>
+
+								<p:column filterBy="#{dtTermoAditivoBeanTable.dataEntrega}"
+									filterMatchMode="contains" headerText="#{ptpgeral.dataEntrega}">
+									<h:outputText value="#{dtTermoAditivoBeanTable.dataEntrega}">
+										<f:convertDateTime pattern="dd/MM/yyyy" />
+									</h:outputText>
+								</p:column>
+
+								<p:column filterBy="#{dtTermoAditivoBeanTable.dataInicio}"
+									filterMatchMode="contains"
+									headerText="#{ptptermoAditivo.dataInicio}">
+									<h:outputText value="#{dtTermoAditivoBeanTable.dataInicio}">
+										<f:convertDateTime pattern="dd/MM/yyyy" />
+									</h:outputText>
+								</p:column>
+
+								<p:column filterBy="#{dtTermoAditivoBeanTable.dataTermino}"
+									filterMatchMode="contains"
+									headerText="#{ptptermoAditivo.dataTermino}">
+									<h:outputText value="#{dtTermoAditivoBeanTable.dataTermino}">
+										<f:convertDateTime pattern="dd/MM/yyyy" />
+									</h:outputText>
+								</p:column>
+
+								<p:column headerText="#{ptptermoAditivo.termoDeCompromisso}">
+									<h:outputText
+										value="#{ptpgeral.protocolo}: #{dtTermoAditivoBeanTable.termoDeCompromisso.protocolo} - 
+												#{ptpaluno.aluno}: #{dtTermoAditivoBeanTable.termoDeCompromisso.aluno.nome} - #{ptpEmpresa.empresa}: 
+												#{dtTermoAditivoBeanTable.termoDeCompromisso.empresa.nome}" />
+
+
+								</p:column>
+
+								<p:column>
+									<f:facet name="header">
+										<h:outputText value="#{ptpgeral.alterar}" />
+									</f:facet>
+									<h:commandLink value="#{ptpgeral.alterar}" action="alterar">
+										<f:setPropertyActionListener
+											value="#{dtTermoAditivoBeanTable}"
+											target="#{termoAditivoBean.termoAditivo}" />
+									</h:commandLink>
+								</p:column>
+
+								<p:column>
+									<f:facet name="header">
+										<h:outputText value="#{ptpgeral.excluir}" />
+									</f:facet>
+									<h:commandLink value="#{ptpgeral.excluir}"
+										action="#{termoAditivoBean.excluir()}"
+										onclick="return confirm('#{ptpgeral.confExcluir} #{ptptermoAditivo.termoAditivo}: #{ptpaluno.aluno}: #{dtTermoAditivoBeanTable.termoDeCompromisso.aluno.nome} - #{ptpEmpresa.empresa}: #{dtTermoAditivoBeanTable.termoDeCompromisso.empresa.nome}');">
+										<f:setPropertyActionListener
+											value="#{dtTermoAditivoBeanTable}"
+											target="#{termoAditivoBean.termoAditivo}" />
+									</h:commandLink>
+								</p:column>
+
+							</p:dataTable>
+
+						</div>
+					</h:form>
+				</p:fieldset>
+			</f:view>
+</p:panel>
+</ui:define>
+</ui:composition>

@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<faces-config xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_2_0.xsd"
+	version="2.0">
+
+	<!--<application>
+		<locale-config>
+			<default-locale>pt_BR</default-locale>
+			<supported-locale>pt</supported-locale>
+			<supported-locale>en_US</supported-locale>
+		</locale-config>
+	</application>
+
+	<application>
+		<resource-bundle>
+			<base-name>messages</base-name>
+			<var>msgs</var>
+		</resource-bundle>
+	</application>-->
+
+	<!-- ************* Mapeamento dos Arquivos de Propriedade ************* -->
+
+	<application>
+		<resource-bundle>
+			<base-name>br.edu.granbery.sisestagio.properties.aluno</base-name>
+			<var>ptpaluno</var>
+		</resource-bundle>
+	</application>
+
+	<application>
+		<resource-bundle>
+			<base-name>br.edu.granbery.sisestagio.properties.curso</base-name>
+			<var>ptpcurso</var>
+		</resource-bundle>
+	</application>
+
+	<application>
+		<resource-bundle>
+			<base-name>br.edu.granbery.sisestagio.properties.geral</base-name>
+			<var>ptpgeral</var>
+		</resource-bundle>
+	</application>
+
+	<application>
+		<resource-bundle>
+			<base-name>br.edu.granbery.sisestagio.properties.usuario</base-name>
+			<var>ptpuser</var>
+		</resource-bundle>
+	</application>
+
+	<application>
+		<resource-bundle>
+			<base-name>br.edu.granbery.sisestagio.properties.empresa</base-name>
+			<var>ptpempresa</var>
+		</resource-bundle>
+	</application>
+
+	<application>
+		<resource-bundle>
+			<base-name>br.edu.granbery.sisestagio.properties.curriculo</base-name>
+			<var>ptpCurriculo</var>
+		</resource-bundle>
+	</application>
+
+
+	<application>
+		<resource-bundle>
+			<base-name>br.edu.granbery.sisestagio.properties.empresa</base-name>
+			<var>ptpEmpresa</var>
+		</resource-bundle>
+	</application>
+
+	<application>
+		<resource-bundle>
+			<base-name>br.edu.granbery.sisestagio.properties.distrato</base-name>
+			<var>ptpdistrato</var>
+		</resource-bundle>
+	</application>
+
+	<application>
+		<resource-bundle>
+			<base-name>br.edu.granbery.sisestagio.properties.projetoDeEstagio</base-name>
+			<var>ptpprojetoDeEstagio</var>
+		</resource-bundle>
+	</application>
+
+	<application>
+		<resource-bundle>
+			<base-name>br.edu.granbery.sisestagio.properties.relatorioDeAcompanhamento</base-name>
+			<var>ptprelatorioDeAcompanhamento</var>
+		</resource-bundle>
+	</application>
+
+	<application>
+		<resource-bundle>
+			<base-name>br.edu.granbery.sisestagio.properties.relatorioMensal</base-name>
+			<var>ptprelatorioMensal</var>
+		</resource-bundle>
+	</application>
+
+	<application>
+		<resource-bundle>
+			<base-name>br.edu.granbery.sisestagio.properties.termoAditivo</base-name>
+			<var>ptptermoAditivo</var>
+		</resource-bundle>
+	</application>
+
+	<application>
+		<resource-bundle>
+			<base-name>br.edu.granbery.sisestagio.properties.termoDeCompromisso</base-name>
+			<var>ptptermoDeCompromisso</var>
+		</resource-bundle>
+	</application>
+
+	<application>
+		<resource-bundle>
+			<base-name>br.edu.granbery.sisestagio.properties.projetoFinal</base-name>
+			<var>ptpprojetoFinal</var>
+		</resource-bundle>
+	</application>
+
+
+	<!-- ************* Mapeamento da Classe Usuario ************* -->
+
+	<navigation-rule>
+		<from-view-id>/admin/user/user.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>alterar</from-outcome>
+			<to-view-id>/admin/user/alterar.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>senha</from-outcome>
+			<to-view-id>/admin/user/senha.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<!-- ************* Mapeamento da Classe curriculo ************* -->
+
+	<navigation-rule>
+		<from-view-id>/admin/curriculo/curriculo.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>alterar</from-outcome>
+			<to-view-id>/admin/curriculo/alterar.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<!-- ************* Mapeamento da Classe Aluno ************* -->
+
+	<navigation-rule>
+		<from-view-id>/admin/aluno/aluno.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>alterar</from-outcome>
+			<to-view-id>/admin/aluno/alterar.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>consulta</from-outcome>
+			<to-view-id>/admin/aluno/consulta.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>senha</from-outcome>
+			<to-view-id>/admin/aluno/senha.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<!-- ************* Mapeamento da Classe Empresa ************* -->
+	<navigation-rule>
+		<from-view-id>/admin/empresa/empresa.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>alterar</from-outcome>
+			<to-view-id>/admin/empresa/alterar.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>consulta</from-outcome>
+			<to-view-id>/admin/empresa/consulta.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<!-- ************* Mapeamento da Classe ProjetoEstagio ************* -->
+
+	<navigation-rule>
+		<from-view-id>/admin/projetoEstagio/projetoEstagio.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>alterar</from-outcome>
+			<to-view-id>/admin/projetoEstagio/alterar.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<!-- ************* Mapeamento da Classe ProjetoFinal ************* -->
+
+	<navigation-rule>
+		<from-view-id>/admin/projetoFinal/projetoFinal.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>alterar</from-outcome>
+			<to-view-id>/admin/projetoFinal/alterar.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<!-- ************* Mapeamento da Classe RelatorioAcompanhamento ************* -->
+
+	<navigation-rule>
+		<from-view-id>/admin/relatorioAcompanhamento/relatorioAcompanhamento.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>alterar</from-outcome>
+			<to-view-id>/admin/relatorioAcompanhamento/alterar.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<!-- ************* Mapeamento da Classe RelatorioMensal ************* -->
+
+	<navigation-rule>
+		<from-view-id>/admin/relatorioMensal/relatorioMensal.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>alterar</from-outcome>
+			<to-view-id>/admin/relatorioMensal/alterar.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>consulta</from-outcome>
+			<to-view-id>/admin/relatorioMensal/consulta.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<!-- ************* Mapeamento da Classe TermoCompromisso ************* -->
+
+	<navigation-rule>
+		<from-view-id>/admin/termoCompromisso/termoCompromisso.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>alterar</from-outcome>
+			<to-view-id>/admin/termoCompromisso/alterar.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>consulta</from-outcome>
+			<to-view-id>/admin/termoCompromisso/consulta.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<!-- ************* Mapeamento da Classe TermoAditivo ************* -->
+
+	<navigation-rule>
+		<from-view-id>/admin/termoAditivo/termoAditivo.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>alterar</from-outcome>
+			<to-view-id>/admin/termoAditivo/alterar.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<!-- ************* Mapeamento da Classe Distrato ************* -->
+
+	<navigation-rule>
+		<from-view-id>/admin/distrato/distrato.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>alterar</from-outcome>
+			<to-view-id>/admin/distrato/alterar.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+
+
+</faces-config>

@@ -1,0 +1,88 @@
+<?xml version='1.0' encoding='ISO-8859-1' ?>
+<ui:composition template="/templates/LayoutPadrao.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+	<ui:define name="cabecalho">
+		<ui:include src="/templates/CabecalhoAdmin.xhtml" />
+	</ui:define>
+	<ui:define name="conteudo">
+		<p:panel styleClass="panel">
+
+			<!-- // AQUI TEM O NOME CONTEUDO QUE Ã‰ O LOCAL DO TEMPLATE-->
+			<f:view>
+				<p:fieldset legend="#{ptprelatorioDeAcompanhamento.cadastrar}">
+					<h:form id="form">
+
+
+						<h:panelGrid columns="4" cellpadding="3" styleClass="colorGrid"
+							id="grid" columnClasses="label, value">
+
+							<h:outputLabel value="#{ptpgeral.obrigatorio}"
+								styleClass="colorGrid" />
+
+						</h:panelGrid>
+
+						<p:messages id="messages" showDetail="false" autoUpdate="true"
+							closable="true" />
+
+						<!--						
+						CALENDARIO PRIMEFACES – CONVERTER PARA PORTUGUES						
+						antes tem que chamar esse script 						
+						-->
+						<h:outputScript name="calendario_pt_BR.js" library="js" />
+
+						<p:panel header="#{ptpgeral.pnlDados}">
+
+							<h:panelGrid columns="2" cellpadding="3" styleClass="panelGrid"
+								id="grid0" columnClasses="label, value">
+
+								<h:outputLabel value="#{ptpgeral.protocolo}: *" />
+
+								<p:inputText id="txtProtocolo" label="#{ptpgeral.protocolo}"
+									required="true"
+									value="#{relatorioAcompanhamentoBean.relatorioAcompanhamento.protocolo}"
+									size="50" maxlength="20">
+									<f:validator validatorId="protocoloValidator" />
+								</p:inputText>
+
+								<h:outputLabel value="#{ptpgeral.dataEntrega}: *" />
+
+								<p:calendar pattern="dd/MM/yyyy" locale="pt_BR"
+									value="#{relatorioAcompanhamentoBean.relatorioAcompanhamento.dataEntrega}"
+									id="calDataEntrega" showButtonPanel="false"
+									label="#{ptpgeral.dataEntrega}" readonlyInput="true"
+									mindate="1/1/13" required="true" navigator="true">
+									<f:validator validatorId="dataValidator" />
+								</p:calendar>
+
+								<h:outputLabel value="#{ptpgeral.aluno}: *" />
+
+								<p:selectOneMenu id="cmbAluno"
+									value="#{relatorioAcompanhamentoBean.relatorioAcompanhamento.aluno}"
+									required="true" label="#{ptpgeral.aluno}"
+									converter="alunoConverter" filter="true" filterMatchMode="contains" effect="scale">
+									<f:selectItems value="#{alunoBean.alunos}" var="aluno"
+										itemLabel="#{aluno.nome}" itemValue="#{aluno}" />
+								</p:selectOneMenu>
+
+
+							</h:panelGrid>
+						</p:panel>
+
+						<p:commandButton id="cmdSalvar" value="#{ptpgeral.salvar}"
+							action="#{relatorioAcompanhamentoBean.salvaRelatorioAcompanhamento()}"
+							styleClass="cmdGeral" onclick="PrimeFaces.cleanWatermarks();" />
+
+						<p:commandButton id="cmdVoltar" styleClass="cmdGeral"
+							onclick="javascript:history.back(-1);" value="#{ptpgeral.voltar}" />
+
+					</h:form>
+				</p:fieldset>
+			</f:view>
+		</p:panel>
+	</ui:define>
+</ui:composition>

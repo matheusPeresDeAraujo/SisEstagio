@@ -1,0 +1,80 @@
+<?xml version='1.0' encoding='ISO-8859-1' ?>
+<ui:composition template="/templates/LayoutPadrao.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+	<ui:define name="cabecalho">
+		<ui:include src="/templates/CabecalhoAdmin.xhtml" />
+	</ui:define>
+	<ui:define name="conteudo">
+		<p:panel styleClass="panel">
+
+			<!-- // AQUI TEM O NOME CONTEUDO QUE Ã‰ O LOCAL DO TEMPLATE-->
+			<f:view>
+
+				<p:fieldset legend="#{ptpaluno.definirSenha}">
+					<h:form>
+
+						<h:panelGrid columns="4" cellpadding="3" styleClass="colorGrid"
+							id="grid" columnClasses="label, value">
+
+							<h:outputLabel value="#{ptpgeral.obrigatorio}"
+								styleClass="colorGrid" />
+
+						</h:panelGrid>
+
+						<p:messages id="messages" showDetail="false" autoUpdate="true"
+							closable="true" />
+
+						<h:inputHidden value="#{alunoBean.aluno.idAluno}" />
+						<h:inputHidden value="#{alunoBean.aluno.bairro}" />
+						<h:inputHidden value="#{alunoBean.aluno.celular}" />
+						<h:inputHidden value="#{alunoBean.aluno.cep}" />
+						<h:inputHidden value="#{alunoBean.aluno.cidade}" />
+						<h:inputHidden value="#{alunoBean.aluno.complemento}" />
+						<h:inputHidden value="#{alunoBean.aluno.curriculo}"
+							converter="curriculoConverter" />
+						<h:inputHidden value="#{alunoBean.aluno.email}" />
+						<h:inputHidden value="#{alunoBean.aluno.fone1}" />
+						<h:inputHidden value="#{alunoBean.aluno.fone2}" />
+						<h:inputHidden value="#{alunoBean.aluno.matricula}" />
+						<h:inputHidden value="#{alunoBean.aluno.nome}" />
+						<h:inputHidden value="#{alunoBean.aluno.numero}" />
+						<h:inputHidden value="#{alunoBean.aluno.rua}" />
+						<h:inputHidden value="#{alunoBean.aluno.uf}" />
+
+
+						<p:panel header="#{ptpgeral.pnlDados}">
+
+							<h:panelGrid columns="2" cellpadding="3" styleClass="panelGrid"
+								id="grid0" columnClasses="label, value">
+
+								<h:outputLabel value="#{ptpuser.senha}: *" />
+
+								<p:password id="senha" required="true" label="#{ptpuser.senha}"
+									value="#{alunoBean.aluno.senha}" size="50" maxlength="255"
+									weakLabel="Senha Fraca" validator="passwordValidator"
+									goodLabel="Senha Boa" strongLabel="Senha Forte" feedback="true"
+									requiredMessage="Senha: A senha não pode ser nula!"
+									promptLabel="Digite sua Senha" />
+
+							</h:panelGrid>
+						</p:panel>
+
+						<p:commandButton id="cmdSalvar" value="#{ptpgeral.salvar}"
+							ajax="false" action="#{alunoBean.definirSenhaUsuario()}"
+							styleClass="cmdGeral" onclick="PrimeFaces.cleanWatermarks();" />
+						<p:commandButton id="cmdVoltar" styleClass="cmdGeral"
+							onclick="javascript:history.back(-1);" value="#{ptpgeral.voltar}" />
+
+					</h:form>
+				</p:fieldset>
+
+			</f:view>
+
+		</p:panel>
+	</ui:define>
+</ui:composition>

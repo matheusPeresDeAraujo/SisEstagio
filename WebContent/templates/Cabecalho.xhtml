@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='ISO-8859-1' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:pe="http://primefaces.org/ui/extensions">
+	
+	
+	
+	<div id="boxMenu">
+		<div class="menu">
+			<h:outputLink value="http://www.granbery.edu.br/" target="_blank" >Site Granbery</h:outputLink>
+			| <h:outputLink value="/SisEstagio/index.xhtml" target="_top" >Aluno</h:outputLink>
+			| <h:outputLink value="/SisEstagio/admin/adminprincipal.xhtml" target="_top" >&Aacute;rea Administrativa</h:outputLink>
+		</div>
+	</div>
+	
+				<div id="headerBox">
+				<h:graphicImage value="/resources/img/logo_faculdade.png" styleClass="logo" />
+					<div class="datahora">
+						Juiz de Fora, <h:outputText value="#{dataHoraBean.data}" />, 
+						<p:clock pattern="HH:mm:ss" mode="server" />  
+					</div>
+					<div class="titulo">
+						Sistema de Controle de Est&aacute;gio
+						<br /><span><b>Curso:</b> Sistema de Informa&ccedil;&atilde;o</span>
+					</div>
+									
+				</div>
+				
+
+</ui:composition>

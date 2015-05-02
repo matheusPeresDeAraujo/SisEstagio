@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='ISO-8859-1' ?>
+<ui:composition template="/templates/LayoutPadrao.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+	<ui:define name="conteudo">
+
+		<!-- // AQUI TEM O NOME CONTEUDO QUE Ã‰ O LOCAL DO TEMPLATE-->
+
+		<p:panel header="#{ptpgeral.consultaTitulo}" styleClass="formEstapa"
+			style="width:400px;">
+
+			<h:form>
+				<p:messages id="messages" showDetail="false" autoUpdate="true"
+					closable="true" />
+				<div class="panelGridBackGroundConsultar">
+
+					<h:outputText value="#{ptpgeral.consultaMensagem}"
+						styleClass="consultaMensgem" />
+
+					<div class="panelGridConsultar">
+						<h:panelGrid id="grid" columns="2" cellpadding="3">
+
+
+							<h:outputLabel value="#{ptpgeral.NMatricula}" />
+							<p:inputText id="txtmatricula" label="N° de Matrícula"
+								required="true" value="#{alunoBean.aluno.matricula}" size="20"
+								maxlength="255" />
+
+
+							<h:outputLabel for="senha" value="#{ptpuser.senha}" />
+							<p:password id="senha" label="Senha" required="true"
+								maxlength="255" size="20" value="#{alunoBean.aluno.senha}" />
+
+
+						</h:panelGrid>
+
+						<center>
+							<p:commandButton id="cmdConsulta" value="Consultar"
+								action="#{alunoBean.consultaByMatriculaEndSenhaSession()}" />
+						</center>
+					</div>
+					<br/>
+					<p:commandButton id="cmdRecuperarSenha"
+						value="#{ptpgeral.esqueciPwd}"
+						action="#{alunoBean.recuperarSenhaRedirect()}" />
+				</div>
+			</h:form>
+
+
+		</p:panel>
+
+	</ui:define>
+</ui:composition>

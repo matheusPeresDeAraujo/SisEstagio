@@ -1,0 +1,83 @@
+<?xml version='1.0' encoding='ISO-8859-1' ?>
+<ui:composition template="/templates/LayoutPadrao.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+	
+<ui:define name="cabecalho">
+	<ui:include src="/templates/CabecalhoAdmin.xhtml" />
+</ui:define>	
+<ui:define name="conteudo">
+<p:panel styleClass="panel">
+
+			<!-- // AQUI TEM O NOME CONTEUDO QUE É O LOCAL DO TEMPLATE-->
+			<f:view>
+				<p:fieldset legend="#{ptpCurriculo.lista}">
+					<h:form>
+						<p:messages id="messages" showDetail="false" autoUpdate="true"
+							closable="true" />
+						<div class="conteudoTable">
+
+							<p:dataTable id="dataTable" value="#{curriculoBean.curriculos}"
+								var="dtCurriculo" paginator="true" rows="10"
+								widgetVar="curriculoTable"
+								emptyMessage="#{ptpgeral.emptyMessage}"
+								filteredValue="#{curriculoBean.filteredCurriculos}">
+
+								<f:facet name="header">
+									<p:outputPanel>
+										<h:outputText value="#{ptpgeral.pesqAll}" />
+										<p:inputText id="globalFilter"
+											onkeyup="curriculoTable.filter()" />
+									</p:outputPanel>
+								</f:facet>
+
+								<p:column filterBy="#{dtCurriculo.idCurriculo}"
+									filterMatchMode="startsWith" headerText="#{ptpgeral.id}">
+									<h:outputText value="#{dtCurriculo.idCurriculo}" />
+								</p:column>
+
+								<p:column filterBy="#{dtCurriculo.numero}"
+									filterMatchMode="contains" headerText="#{ptpCurriculo.num}">
+									<h:outputText value="#{dtCurriculo.numero}" />
+								</p:column>
+
+								<p:column filterBy="#{dtCurriculo.horasDeEstagio}"
+									filterMatchMode="contains"
+									headerText="#{ptpCurriculo.cargaHoraria}">
+									<h:outputText value="#{dtCurriculo.horasDeEstagio}" />
+								</p:column>
+
+								<p:column>
+									<f:facet name="header">
+										<h:outputText value="#{ptpgeral.alterar}" />
+									</f:facet>
+									<h:commandLink value="#{ptpgeral.alterar}" action="alterar">
+										<f:setPropertyActionListener value="#{dtCurriculo}"
+											target="#{curriculoBean.curriculo}" />
+									</h:commandLink>
+								</p:column>
+
+								<p:column>
+									<f:facet name="header">
+										<h:outputText value="#{ptpgeral.excluir}" />
+									</f:facet>
+									<h:commandLink value="#{ptpgeral.excluir}"
+										action="#{curriculoBean.excluirCurriculo()}"
+										onclick="return confirm('#{ptpgeral.confExcluir} #{ptpCurriculo.curriculo}: #{ptpCurriculo.num} #{dtCurriculo.numero} - #{ptpCurriculo.cargaHoraria} de #{dtCurriculo.horasDeEstagio} horas');">
+										<f:setPropertyActionListener value="#{dtCurriculo}"
+											target="#{curriculoBean.curriculo}" />
+									</h:commandLink>
+								</p:column>
+
+							</p:dataTable>
+
+						</div>
+					</h:form>
+				</p:fieldset>
+			</f:view>
+</p:panel>
+</ui:define>
+</ui:composition>

@@ -1,0 +1,133 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<link
+		href="#{facesContext.externalContext.requestContextPath}/css/config.css"
+		rel="stylesheet" type="text/css" />
+</h:head>
+<h:body style="font-size:12px; border: 0px">
+	<p:accordionPanel>
+		<p:tab title="#{ptpgeral.aluno}" style="font-size:12px">
+			<a
+				href="#{facesContext.externalContext.requestContextPath}/admin/aluno/incluir.xhtml"><h:outputText
+					value="#{ptpgeral.cadastrar}" /></a>
+			<br />
+			<a
+				href="#{facesContext.externalContext.requestContextPath}/admin/aluno/aluno.xhtml"><h:outputText
+					value="#{ptpgeral.listar}" /></a>
+		</p:tab>
+		<p:tab title="#{ptpCurriculo.curriculo}" rendered="true">
+			<a
+				href="#{facesContext.externalContext.requestContextPath}/admin/curriculo/incluir.xhtml">
+				<h:outputText value="#{ptpgeral.cadastrar}" />
+			</a>
+			<br />
+			<a
+				href="#{facesContext.externalContext.requestContextPath}/admin/curriculo/curriculo.xhtml"><h:outputText
+					value="#{ptpgeral.listar}" /></a>
+		</p:tab>
+
+		<p:tab title="#{ptpdistrato.distrato}" rendered="true">
+			<a
+				href="#{facesContext.externalContext.requestContextPath}/admin/distrato/incluir.xhtml">
+				<h:outputText value="#{ptpgeral.cadastrar}" />
+			</a>
+			<br />
+			<a
+				href="#{facesContext.externalContext.requestContextPath}/admin/distrato/distrato.xhtml"><h:outputText
+					value="#{ptpgeral.listar}" /></a>
+		</p:tab>
+
+		<p:tab title="#{ptpEmpresa.empresa}" rendered="true">
+			<a
+				href="#{facesContext.externalContext.requestContextPath}/admin/empresa/incluir.xhtml">
+				<h:outputText value="#{ptpgeral.cadastrar}" />
+			</a>
+			<br />
+			<a
+				href="#{facesContext.externalContext.requestContextPath}/admin/empresa/empresa.xhtml"><h:outputText
+					value="#{ptpgeral.listar}" /></a>
+		</p:tab>
+
+		<p:tab title="#{ptpprojetoDeEstagio.projetoDeEstagio}" rendered="true">
+			<a
+				href="#{facesContext.externalContext.requestContextPath}/admin/projetoEstagio/incluir.xhtml"><h:outputText
+					value="#{ptpgeral.cadastrar}" /></a>
+			<br />
+			<a
+				href="#{facesContext.externalContext.requestContextPath}/admin/projetoEstagio/projetoEstagio.xhtml"><h:outputText
+					value="#{ptpgeral.listar}" /></a>
+		</p:tab>
+
+		<p:tab title="#{ptpprojetoFinal.projFinal}" rendered="true">
+			<a
+				href="#{facesContext.externalContext.requestContextPath}/admin/projetoFinal/incluir.xhtml"><h:outputText
+					value="#{ptpgeral.cadastrar}" /></a>
+			<br />
+			<a
+				href="#{facesContext.externalContext.requestContextPath}/admin/projetoFinal/projetoFinal.xhtml"><h:outputText
+					value="#{ptpgeral.listar}" /></a>
+		</p:tab>
+
+		<p:tab title="#{ptprelatorioDeAcompanhamento.relAcompanhamento}"
+			rendered="true">
+			<a
+				href="#{facesContext.externalContext.requestContextPath}/admin/relatorioAcompanhamento/incluir.xhtml"><h:outputText
+					value="#{ptpgeral.cadastrar}" /></a>
+			<br />
+			<a
+				href="#{facesContext.externalContext.requestContextPath}/admin/relatorioAcompanhamento/relatorioAcompanhamento.xhtml"><h:outputText
+					value="#{ptpgeral.listar}" /></a>
+		</p:tab>
+
+		<p:tab title="#{ptprelatorioMensal.relMensal}" rendered="true">
+			<a
+				href="#{facesContext.externalContext.requestContextPath}/admin/relatorioMensal/incluir.xhtml"><h:outputText
+					value="#{ptpgeral.cadastrar}" /></a>
+			<br />
+			<a
+				href="#{facesContext.externalContext.requestContextPath}/admin/relatorioMensal/relatorioMensal.xhtml"><h:outputText
+					value="#{ptpgeral.listar}" /></a>
+		</p:tab>
+
+		<p:tab title="#{ptptermoAditivo.termoAditivo}" rendered="true">
+			<a
+				href="#{facesContext.externalContext.requestContextPath}/admin/termoAditivo/incluir.xhtml"><h:outputText
+					value="#{ptpgeral.cadastrar}" /></a>
+			<br />
+			<a
+				href="#{facesContext.externalContext.requestContextPath}/admin/termoAditivo/termoAditivo.xhtml"><h:outputText
+					value="#{ptpgeral.listar}" /></a>
+		</p:tab>
+
+		<p:tab title="#{ptptermoDeCompromisso.termoDeCompromisso}"
+			rendered="true">
+			<a
+				href="#{facesContext.externalContext.requestContextPath}/admin/termoCompromisso/incluir.xhtml"><h:outputText
+					value="#{ptpgeral.cadastrar}" /></a>
+			<br />
+			<a
+				href="#{facesContext.externalContext.requestContextPath}/admin/termoCompromisso/termoCompromisso.xhtml"><h:outputText
+					value="#{ptpgeral.listar}" /></a>
+		</p:tab>
+
+		<p:tab title="#{ptpuser.user}" rendered="true">
+			<a
+				href="#{facesContext.externalContext.requestContextPath}/admin/user/incluir.xhtml"><h:outputText
+					value="#{ptpgeral.cadastrar}" /></a>
+			<br />
+			<a
+				href="#{facesContext.externalContext.requestContextPath}/admin/user/user.xhtml"><h:outputText
+					value="#{ptpgeral.listar}" /></a>
+		</p:tab>
+		<p:tab title="#{ptpgeral.sair}">
+			<h:outputText value="#{ptpgeral.sair}" />
+		</p:tab>
+	</p:accordionPanel>
+
+</h:body>
+</html>

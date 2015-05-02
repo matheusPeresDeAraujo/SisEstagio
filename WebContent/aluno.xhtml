@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<link
+		href="#{facesContext.externalContext.requestContextPath}/css/config.css"
+		rel="stylesheet" type="text/css" />
+</h:head>
+<ui:composition template="/templates/padrao.xhtml">
+	<ui:define name="conteudo">
+		<!-- // AQUI TEM O NOME CONTEUDO QUE É O LOCAL DO TEMPLATE-->
+		<f:view>
+			<h:form>
+				<p:messages id="messages" showDetail="false" autoUpdate="true"
+					closable="true" />
+				<div class="panelGridBackGroundConsultar">
+					<h1>
+						<h:outputLabel value="#{ptpgeral.consulta}" />
+					</h1>
+					<div class="panelGridConsultar">
+						<h:panelGrid columns="2">
+							<h:outputLabel value="#{ptpgeral.NMatricula}" />
+							<br />
+							<p:inputText id="txtmatricula" label="N° de Matrícula"
+								required="true" value="#{alunoBean.aluno.matricula}" size="25"
+								maxlength="255" />
+							<br />
+							<h:outputLabel for="senha" value="#{ptpuser.senha}" />
+							<br />
+							<p:password id="senha" label="Senha" required="true"
+								maxlength="100" requiredMessage="Senha: Valor obrigatório."
+								size="25" value="#{alunoBean.aluno.senha}" />
+							<br />
+						</h:panelGrid>
+						<br />
+						<p:commandButton id="cmdConsulta" value="Consultar"
+							action="#{alunoBean.consultaByMatriculaEndSenhaSession()}" />
+					</div>
+				</div>
+			</h:form>
+			<h:form>
+				<div class="BotaoEsqueci">
+					<p:commandButton id="cmdRecuperarSenha"
+						value="#{ptpgeral.esqueciPwd}"
+						action="#{alunoBean.recuperarSenhaRedirect()}" />
+				</div>
+			</h:form>
+		</f:view>
+	</ui:define>
+</ui:composition>
+</html>

@@ -1,0 +1,149 @@
+body {
+	font-size: 12px;
+	font-family: Arial, Helvetica, sans-serif;
+	margin: 0px;
+}
+
+body{
+	background: #f1f1f1;
+}
+
+#boxMenu{
+	/*background:url("../resources/img/block_transparent.png") scroll 50% 50%;*/
+	background:#10142a;
+	display: inline-block;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	box-shadow: 1px 2px 6px rgba(0, 0, 0, 0.27);
+	color: #FFF;
+}
+.menu a {
+	text-decoration: none;
+	text-shadow:1px 1px 1px #333333;
+	padding: 1px 5px;
+}
+
+.menu a {
+	color: #FFFFFF;
+	text-decoration: none;
+	text-shadow:1px 1px 1px #333333;
+	font-size: 12px;
+}
+.menu a:HOVER{ color: #f1f1f1 !important; }
+.menu a:VISITED{ color: #f1f1f1; }
+.menu {
+	width: 78%;
+	text-align: left;
+	padding: 2px 0px 3px; 
+	margin: 0 auto;
+}
+
+#menuPrincipal{
+	clear: left; display: block; position: relative; width: 90%; margin: 0px auto;
+	min-width: 900px;
+	
+}
+
+
+
+#headerBox{
+	margin: 20px auto 5px;
+	width: 80%;
+	min-width: 1010px;
+}
+
+.datahora{
+    color: #000000;
+    display: inline-block;
+    float: right;
+    font-size: 13px;
+    margin-top: 10px;
+    padding: 0;
+    position: relative;
+    text-shadow: 1px 1px 1px #B6B6B6;
+}
+.titulo{
+    color: #00008B;
+    display: inline-block;
+    float: left;
+    font-family: trebuchet ms;
+    font-size: 21px;
+    margin-left: 10px;
+    margin-top: 10px;
+    padding: 0;
+    position: relative;
+    text-shadow: 1px 1px 3px #939393;
+}
+.titulo span{
+    color: darkred;
+    display: inline-block;
+    font-family: trebuchet ms;
+    font-size: 18px;
+    padding: 0;
+    position: relative;
+    text-shadow: 1px 1px 3px #939393;
+}
+.etapa{
+    color: #18087B;
+    display: inline-block;
+    float: right;
+    font-family: trebuchet MS;
+    font-size: 18px;
+    padding: 0;
+    position: relative;
+    text-shadow: 1px 1px 2px #898989;
+    margin-top: 6px;
+    clear: right;
+}
+.etapa span{
+	color: #333;
+	font-size: 13px;
+}
+.barraProgressao{
+	width:240px;
+	margin:15px 15px 0px 15px;
+	float: right;
+}
+.logo{
+	display: block;
+    float: left;
+    position: relative;
+}
+#content{
+	clear: left;
+}
+.formEstapa{
+	margin: 0 auto;
+}
+
+.botaoProximo{
+	display: block !important;
+	margin: 5px auto !important;
+	text-align: center !important;
+	position: relative !important;	
+}
+.msnInstrucao{
+	width: 600px; 
+	padding: 10px; 
+	margin: 0 auto;
+}
+.panel{
+	width: 90%;
+	min-width: 900px;
+}
+
+
+
+
+#footer {
+	font-size: 10px;
+	font-color: #9b9b9b;
+	margin-top: 20px;
+	border-top: 1px solid #cfcfcf;
+	padding: 15px;
+	background:#C9D7E5 url("../resources/img/footer.png") no-repeat top center;
+	text-align: center;
+	box-shadow: 1px 2px 6px rgba(0, 0, 0, 0.27);
+	border: 1px solid #FFF;
+}

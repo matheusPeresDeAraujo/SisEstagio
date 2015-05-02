@@ -1,0 +1,84 @@
+<?xml version='1.0' encoding='ISO-8859-1' ?>
+<ui:composition template="/templates/LayoutPadrao.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+	<ui:define name="cabecalho">
+		<ui:include src="/templates/CabecalhoAdmin.xhtml" />
+	</ui:define>
+	<ui:define name="conteudo">
+		<p:panel styleClass="panel">
+
+			<!-- // AQUI TEM O NOME CONTEUDO QUE É O LOCAL DO TEMPLATE-->
+			<f:view>
+				<p:fieldset legend="#{ptprelatorioMensal.relTotalFaltaToAluno}">
+					<h:form>
+						<p:messages id="messages" showDetail="false" autoUpdate="true"
+							closable="true" />
+						<div class="conteudoTable">
+
+							<p:dataTable id="RelRelatorioMensalBeanTable"
+								value="#{relRelatorioMensalBean.findRelFaltaHorasAluno}"
+								var="dtRelRelatorioMensalBean"
+								filteredValue="#{relRelatorioMensalBean.filteredRelRelatorioMensal}"
+								widgetVar="RelRelatorioMensalBeanTable"
+								emptyMessage="#{ptpgeral.emptyMessage}" paginator="true"
+								rows="10">
+
+								<f:facet name="header">
+									<p:outputPanel>
+										<h:outputText value="#{ptpgeral.pesqAll} " />
+										<p:inputText id="globalFilter"
+											onkeyup="RelRelatorioMensalBeanTable.filter()" />
+									</p:outputPanel>
+								</f:facet>
+
+
+								<p:column filterBy="#{dtRelRelatorioMensalBean.nome}"
+									filterMatchMode="contains">
+									<f:facet name="header">
+										<h:outputText value="#{ptpgeral.aluno}" />
+									</f:facet>
+									<h:outputText value="#{dtRelRelatorioMensalBean.nome}" />
+								</p:column>
+
+								<p:column
+									filterBy="#{dtRelRelatorioMensalBean.totalHorasAproveitadas}"
+									filterMatchMode="contains">
+									<f:facet name="header">
+										<h:outputText value="#{ptprelatorioMensal.horasFalta}" />
+									</f:facet>
+									<h:outputText
+										value="#{dtRelRelatorioMensalBean.totalHorasAproveitadas}" />
+								</p:column>
+
+							</p:dataTable>
+
+							<h:panelGrid columns="2">
+								<p:panel header="#{ptpgeral.exportar}">
+
+									<h:commandLink id="pdfTop">
+										<p:graphicImage value="/imagens/pdf.png" />
+										<p:dataExporter type="pdf"
+											target="RelRelatorioMensalBeanTable"
+											fileName="findRelFaltaHorasAluno" encoding="iso-8859-1"
+											preProcessor="#{dataExporterBean.preProcessPDFHorasFalta}" />
+										<p:tooltip for="pdfTop" value="#{ptpgeral.expPdf}" />
+									</h:commandLink>
+
+								</p:panel>
+							</h:panelGrid>
+
+						</div>
+
+						<p:commandButton id="cmdVoltar" styleClass="cmdGeral"
+							onclick="javascript:history.back(-1);" value="#{ptpgeral.voltar}" />
+					</h:form>
+				</p:fieldset>
+			</f:view>
+		</p:panel>
+	</ui:define>
+</ui:composition>

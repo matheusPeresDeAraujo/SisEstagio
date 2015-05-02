@@ -1,0 +1,102 @@
+<?xml version='1.0' encoding='ISO-8859-1' ?>
+<ui:composition template="/templates/LayoutPadrao.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+	
+<ui:define name="cabecalho">
+	<ui:include src="/templates/CabecalhoAdmin.xhtml" />
+</ui:define>	
+<ui:define name="conteudo">
+<p:panel styleClass="panel">
+
+			<!-- // AQUI TEM O NOME CONTEUDO QUE É O LOCAL DO TEMPLATE-->
+			<f:view>
+				<p:fieldset legend="#{ptpdistrato.lista}">
+					<h:form>
+						<p:messages id="messages" showDetail="false" autoUpdate="true"
+							closable="true" />
+						<div class="conteudoTable">
+
+							<p:dataTable id="dataTable" value="#{distratoBean.distratos}"
+								var="dtdistratoBeanTable" paginator="true" rows="10"
+								widgetVar="distratoTable"
+								emptyMessage="#{ptpgeral.emptyMessage}"
+								filteredValue="#{distratoBean.filteredDistrato}">
+
+								<f:facet name="header">
+									<p:outputPanel>
+										<h:outputText value="#{ptpgeral.pesqAll}" />
+										<p:inputText id="globalFilter"
+											onkeyup="distratoTable.filter()" />
+									</p:outputPanel>
+								</f:facet>
+
+								<p:column filterBy="#{dtdistratoBeanTable.idDistrato}"
+									filterMatchMode="contains" headerText="#{ptpgeral.id}">
+									<h:outputText value="#{dtdistratoBeanTable.idDistrato}" />
+								</p:column>
+
+								<p:column filterBy="#{dtdistratoBeanTable.protocolo}"
+									filterMatchMode="contains" headerText="#{ptpgeral.protocolo}">
+									<h:outputText value="#{dtdistratoBeanTable.protocolo}" />
+								</p:column>
+
+								<p:column filterBy="#{dtdistratoBeanTable.dataEntrega}"
+									filterMatchMode="contains" headerText="#{ptpgeral.dataEntrega}">
+									<h:outputText value="#{dtdistratoBeanTable.dataEntrega}">
+										<f:convertDateTime pattern="dd/MM/yyyy" />
+									</h:outputText>
+								</p:column>
+
+
+								<p:column filterBy="#{dtdistratoBeanTable.dataTermino}"
+									filterMatchMode="contains"
+									headerText="#{ptpdistrato.dataTermino}">
+									<h:outputText value="#{dtdistratoBeanTable.dataTermino}">
+										<f:convertDateTime pattern="dd/MM/yyyy" />
+									</h:outputText>
+								</p:column>
+
+								<p:column headerText="#{ptpdistrato.termoDeCompromisso}">
+									<h:outputText
+										value="#{ptpgeral.protocolo}: #{dtdistratoBeanTable.termoDeCompromisso.protocolo} - 
+												#{ptpaluno.aluno}: #{dtdistratoBeanTable.termoDeCompromisso.aluno.nome} - #{ptpEmpresa.empresa}: 
+												#{dtdistratoBeanTable.termoDeCompromisso.empresa.nome}" />
+
+
+								</p:column>
+
+								<p:column>
+									<f:facet name="header">
+										<h:outputText value="#{ptpgeral.alterar}" />
+									</f:facet>
+									<h:commandLink value="#{ptpgeral.alterar}" action="alterar">
+										<f:setPropertyActionListener value="#{dtdistratoBeanTable}"
+											target="#{distratoBean.distrato}" />
+									</h:commandLink>
+								</p:column>
+
+								<p:column>
+									<f:facet name="header">
+										<h:outputText value="#{ptpgeral.excluir}" />
+									</f:facet>
+									<h:commandLink value="#{ptpgeral.excluir}"
+										action="#{distratoBean.excluir()}"
+										onclick="return confirm('#{ptpgeral.confExcluir} #{ptpdistrato.distrato}: #{ptpaluno.aluno}: #{dtdistratoBeanTable.termoDeCompromisso.aluno.nome} - #{ptpEmpresa.empresa}: #{dtdistratoBeanTable.termoDeCompromisso.empresa.nome}');">
+										<f:setPropertyActionListener value="#{dtdistratoBeanTable}"
+											target="#{distratoBean.distrato}" />
+									</h:commandLink>
+								</p:column>
+
+							</p:dataTable>
+
+						</div>
+					</h:form>
+				</p:fieldset>
+			</f:view>
+</p:panel>
+</ui:define>
+</ui:composition>

@@ -1,0 +1,157 @@
+body {
+	overflow-x: hidden;
+	background-image: url("../imagens/azul.jpg");
+	font-family: verdana;
+	font-size: 10px;
+}
+
+.styleMenu {
+	color: black !important;
+}
+
+.a {
+	border: none;
+	border: 0px;
+}
+
+#principal {
+	margin-top: 20px;
+	background-color: white;
+	width: 950px;
+	height: 750px;
+	position: absolute;
+	left: 42%;
+	margin-left: -375px;
+	top: 0%;
+}
+
+.requiredClass {
+	border: 2px solid red;
+}
+
+.sair {
+	margin-top: 120px;
+	text-align: right;
+	padding-left: 1820px;
+	font-size: large;
+}
+
+#principalAluno {
+	margin-top: 20px;
+	background-color: white;
+	width: 900px;
+	height: 750px;
+	position: absolute;
+	left: 50%;
+	margin-left: -700px;
+	top: 0%;
+}
+
+.h1 {
+	padding-left: 250px;
+}
+
+.conteudo {
+	padding-left: 100px;
+	font-size: 16px;
+}
+
+.conteudoTable {
+	font-size: 16px;
+}
+
+#topo {
+	width: 347px;
+	height: 123px;
+	background-image: url("../imagens/logo.png");
+	margin-left: 3px;
+	position: absolute;
+}
+
+.primefacesColorImg .ui-layout-unit-content {
+	background-image: url("../imagens/azul.jpg");
+	border: 0px;
+}
+
+.primefacesColor .ui-layout-unit-content {
+	background: #F0F8FF;
+}
+
+.panelGrid {
+	margin-left: 30px;
+	margin-right: 250px;
+}
+
+.colorGrid {
+	font-size: larger;
+}
+
+.panelGridBackGround {
+	height: 170px;
+	width: 250px;
+	margin-left: 360px;
+	margin-right: 250px;
+	margin-top: 110px;
+	background: #E8E8E8;
+}
+
+.textCenter {
+	text-align: center;
+}
+
+.cmdGeral {
+	margin-top: 10px;
+	margin-left: 150px;
+}
+
+.espacoTxt {
+	margin-top: 5px;
+}
+
+.espacoTxtObs {
+	margin-top: 5px;
+	width: 315px;
+}
+
+.cmdLogin {
+	margin-top: 5px;
+	margin-left: 80px;
+}
+
+.panelGridBackGroundConsultar {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin-left: -110px;
+	margin-top: -200px;
+	font-size: 18px;
+}
+
+.panelGridForm {
+	position: absolute;
+	left: 15%;
+	top: 5%;
+	font-size: 18px;
+}
+
+.panelGridFormh1 {
+	text-align: center;
+}
+
+.fonteNegrito {
+	font-weight: bold;
+}
+
+.panelGridConsultar {
+	margin-left: 30px;
+	margin-right: 250px;
+}
+
+.BotaoEsqueci {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin-left: 50px;
+	margin-top: 40px;
+	font-size: 18px;
+}

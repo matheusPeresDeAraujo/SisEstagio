@@ -1,0 +1,74 @@
+<?xml version='1.0' encoding='ISO-8859-1' ?>
+<ui:composition template="/templates/LayoutPadrao.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+	<ui:define name="cabecalho">
+		<ui:include src="/templates/CabecalhoAdmin.xhtml" />
+	</ui:define>
+	<ui:define name="conteudo">
+		<p:panel styleClass="panel">
+
+			<!-- // AQUI TEM O NOME CONTEUDO QUE Ã‰ O LOCAL DO TEMPLATE-->
+			<f:view>
+				<p:fieldset legend="#{ptpuser.cadastrar}">
+					<h:form>
+
+						<h:panelGrid columns="4" cellpadding="3" styleClass="colorGrid"
+							id="grid" columnClasses="label, value">
+
+							<h:outputLabel value="#{ptpgeral.obrigatorio}"
+								styleClass="colorGrid" />
+
+						</h:panelGrid>
+
+
+						<p:messages id="messages" showDetail="false" autoUpdate="true"
+							closable="true" />
+
+						<p:panel header="#{ptpgeral.pnlDados}">
+
+							<h:panelGrid columns="2" cellpadding="3" styleClass="panelGrid"
+								id="grid0" columnClasses="label, value">
+
+								<h:outputLabel value="#{ptpuser.name}: *" />
+
+								<p:inputText id="txtnome" label="Nome" required="true"
+									value="#{usuarioBean.usuario.nome}" size="50" maxlength="255" />
+
+								<h:outputLabel value="#{ptpuser.email}: *" />
+
+								<p:inputText id="email" label="#{ptpuser.email}" required="true"
+									value="#{usuarioBean.usuario.email}" size="50" maxlength="255">
+									<f:validator validatorId="emailValidator" />
+									<f:validator validatorId="emailDisponibilidadeValidator" />
+								</p:inputText>
+
+								<h:outputLabel value="#{ptpuser.userGrupo}: *" />
+
+								<p:selectOneMenu id="tipoAcesso"
+									value="#{usuarioBean.usuario.tipoAcesso}" required="true">
+									<f:selectItem itemLabel="Supervisor de Estágio" itemValue="1" />
+									<f:selectItem itemLabel="Secretaria" itemValue="2" />
+								</p:selectOneMenu>
+
+
+							</h:panelGrid>
+						</p:panel>
+
+						<p:commandButton id="cmdSalvar" value="#{ptpgeral.salvar}"
+							action="#{usuarioBean.salvaUsuario()}" styleClass="cmdGeral"
+							onclick="PrimeFaces.cleanWatermarks();" />
+
+						<p:commandButton id="cmdVoltar" styleClass="cmdGeral"
+							onclick="javascript:history.back(-1);" value="#{ptpgeral.voltar}" />
+
+					</h:form>
+				</p:fieldset>
+			</f:view>
+		</p:panel>
+	</ui:define>
+</ui:composition>

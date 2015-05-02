@@ -1,0 +1,111 @@
+<?xml version='1.0' encoding='ISO-8859-1' ?>
+<ui:composition template="/templates/LayoutPadrao.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+	<ui:define name="cabecalho">
+		<ui:include src="/templates/CabecalhoAdmin.xhtml" />
+	</ui:define>
+	<ui:define name="conteudo">
+		<p:panel styleClass="panel">
+
+			<!-- // AQUI TEM O NOME CONTEUDO QUE É O LOCAL DO TEMPLATE-->
+			<f:view>
+				<p:fieldset legend="#{ptptermoDeCompromisso.lista}">
+					<h:form>
+						<p:messages id="messages" showDetail="false" autoUpdate="true"
+							closable="true" />
+						<div class="conteudoTable">
+
+							<p:dataTable id="dataTable"
+								value="#{termoCompromissoBean.termoCompromissos}"
+								var="dtTermoCompromissoBeanTable" paginator="true" rows="10"
+								widgetVar="termoCompromissoTable"
+								emptyMessage="#{ptpgeral.emptyMessage}"
+								filteredValue="#{termoCompromissoBean.filteredTermoCompromisso}">
+
+								<f:facet name="header">
+									<p:outputPanel>
+										<h:outputText value="#{ptpgeral.pesqAll}" />
+										<p:inputText id="globalFilter"
+											onkeyup="termoCompromissoTable.filter()" />
+									</p:outputPanel>
+								</f:facet>
+
+								<p:column
+									filterBy="#{dtTermoCompromissoBeanTable.idTermoDeCompromisso}"
+									filterMatchMode="contains" headerText="#{ptpgeral.id}">
+									<h:outputText
+										value="#{dtTermoCompromissoBeanTable.idTermoDeCompromisso}" />
+								</p:column>
+
+								<p:column filterBy="#{dtTermoCompromissoBeanTable.protocolo}"
+									filterMatchMode="contains" headerText="#{ptpgeral.protocolo}">
+									<h:outputText value="#{dtTermoCompromissoBeanTable.protocolo}" />
+								</p:column>
+
+								<p:column filterBy="#{dtTermoCompromissoBeanTable.dataEntrega}"
+									filterMatchMode="contains" headerText="#{ptpgeral.dataEntrega}">
+									<h:outputText
+										value="#{dtTermoCompromissoBeanTable.dataEntrega}">
+										<f:convertDateTime pattern="dd/MM/yyyy" />
+									</h:outputText>
+								</p:column>
+
+								<p:column filterBy="#{dtTermoCompromissoBeanTable.aluno.nome}"
+									filterMatchMode="contains" headerText="#{ptpaluno.aluno}">
+									<h:outputText value="#{dtTermoCompromissoBeanTable.aluno.nome}" />
+								</p:column>
+
+								<p:column filterBy="#{dtTermoCompromissoBeanTable.empresa.nome}"
+									filterMatchMode="contains" headerText="#{ptpempresa.empresa}">
+									<h:outputText value="#{dtTermoCompromissoBeanTable.empresa.nome}" />
+								</p:column>
+
+								<p:column>
+									<f:facet name="header">
+										<h:outputText value="#{ptpgeral.consulta}" />
+									</f:facet>
+									<h:commandLink value="#{ptpgeral.consulta}" action="consulta">
+										<f:setPropertyActionListener
+											value="#{dtTermoCompromissoBeanTable}"
+											target="#{termoCompromissoBean.termoCompromisso}" />
+									</h:commandLink>
+								</p:column>
+
+								<p:column>
+									<f:facet name="header">
+										<h:outputText value="#{ptpgeral.alterar}" />
+									</f:facet>
+									<h:commandLink value="#{ptpgeral.alterar}" action="alterar">
+										<f:setPropertyActionListener
+											value="#{dtTermoCompromissoBeanTable}"
+											target="#{termoCompromissoBean.termoCompromisso}" />
+									</h:commandLink>
+								</p:column>
+
+								<p:column>
+									<f:facet name="header">
+										<h:outputText value="#{ptpgeral.excluir}" />
+									</f:facet>
+									<h:commandLink value="#{ptpgeral.excluir}"
+										action="#{termoCompromissoBean.excluir()}"
+										onclick="return confirm('#{ptpgeral.confExcluir} #{ptptermoDeCompromisso.termoDeCompromisso}: #{ptpaluno.aluno}: #{dtTermoCompromissoBeanTable.aluno.nome} #{ptpgeral.protocolo}: #{dtTermoCompromissoBeanTable.protocolo}');">
+										<f:setPropertyActionListener
+											value="#{dtTermoCompromissoBeanTable}"
+											target="#{termoCompromissoBean.termoCompromisso}" />
+									</h:commandLink>
+								</p:column>
+
+							</p:dataTable>
+
+						</div>
+					</h:form>
+				</p:fieldset>
+			</f:view>
+		</p:panel>
+	</ui:define>
+</ui:composition>

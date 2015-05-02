@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='ISO-8859-1' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<title><ui:insert name="titulo">Sistema de Controle de Estágio  - Instituto Metodista Granbery</ui:insert></title>
+	<h:outputStylesheet library="css" name="layout.css" />
+	<h:outputStylesheet library="css" name="style.css" />
+	
+</h:head>
+<h:body>
+
+	<!-- <h:messages showDetail="false" showSummary="true"
+				styleClass="form-messages" errorClass="error" infoClass="info" /> -->
+				
+	<div id="header">
+		<ui:insert name="cabecalho">
+			<ui:include src="/templates/Cabecalho.xhtml" />
+		</ui:insert>	
+	</div>
+
+	<div id="content">
+		<ui:insert name="conteudo" />
+	</div>
+
+	<div id="footer">
+		<ui:insert name="rodape">
+			<ui:include src="/templates/Rodape.xhtml" />
+		</ui:insert>
+	</div>
+	
+</h:body>
+</html>

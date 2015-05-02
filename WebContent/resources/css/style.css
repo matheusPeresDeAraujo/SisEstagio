@@ -1,0 +1,74 @@
+@CHARSET "ISO-8859-1";
+
+
+
+.ui-growl-item{
+	padding: 0 5px !important;
+}
+.ui-growl-item-container{
+	margin: 0 0 5px !important;
+	box-shadow: 0 1px 6px rgba(0, 0, 0, 0.27) !important;
+	border: 1px solid #FFF;
+}
+.ui-growl{
+	width: 270px !important;
+	margin-top: 5px;
+}
+
+.ui-panel{
+	box-shadow: 1px 2px 6px rgba(0, 0, 0, 0.27);
+    margin: 5px auto;
+}
+.ui-widget-content .label{
+	text-align: right;
+}
+.ui-datatable-odd{
+	background: #EEEEEE;
+}
+
+.ui-widget-content .label{
+	min-width: 130px;
+	font-weight: bold;
+	text-align: right;
+	display: inline-block;
+}
+.ui-menu .ui-menuitem-link{
+	line-height: 13px !important;
+}
+.ui-menu .ui-menuitem-link .ui-menuitem-icon{
+	padding-right: 2px;
+}
+.ui-menu .ui-menu-parent .ui-menu-child{
+	min-width: 190px;
+}
+
+
+#menuPrincipal .ui-menu{
+	background:#10142a;
+}
+#menuPrincipal .ui-menu .ui-menuitem-text{
+	font-weight: bold;
+	color: #FFF;
+}
+#menuPrincipal .ui-state-hover .ui-menuitem-text {
+	color: #000 !important;
+}
+#menuPrincipal .ui-menubar .ui-menu-child .ui-menuitem-text{
+	font-weight: normal !important;
+	color: #333;
+}
+
+.mensagemTop .ui-messages{
+	display: inline-block;
+	position: absolute;
+	width: 100%;
+	background:url("../resources/img/block_transparent.png") repeat scroll 50% 50%;
+	z-index: 9999;
+	top: 0;
+	left: 0;
+}
+.mensagemTop .ui-messages .ui-corner-all{
+	width: 80%;
+	margin:5px auto;
+}
+

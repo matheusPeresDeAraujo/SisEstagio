@@ -1,0 +1,49 @@
+<ui:composition template="/templates/LayoutPadrao.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+	
+	<ui:define name="conteudo">
+	
+		<!-- // AQUI TEM O NOME CONTEUDO QUE É O LOCAL DO TEMPLATE-->
+		
+		<p:panel header="#{ptpgeral.sce}"  styleClass="formEstapa" style="width:600px;">
+			<!-- // AQUI TEM O NOME CONTEUDO QUE É O LOCAL DO TEMPLATE-->
+			<f:view>
+
+				<p:fieldset legend="#{ptpgeral.efetuarLogin}">
+					<h:form id="form">
+						<p:messages id="messages" showDetail="false" autoUpdate="true"
+							closable="true" />
+
+						<p:panel>
+
+							<h:panelGrid columns="2" cellpadding="3" styleClass="panelGrid"
+								id="grid0" columnClasses="label, value">
+
+								<h:outputLabel for="login" value="#{ptpuser.email}" />
+								<p:inputText id="login" label="Login" required="true"
+									maxlength="100" requiredMessage="Login: Valor obrigatório."
+									size="30" value="#{authenticatorBean.usuario.email}" />
+
+								<h:outputLabel for="senha" value="#{ptpuser.senha}" />
+								<p:password id="senha" label="Senha" required="true"
+									maxlength="100" requiredMessage="Senha: Valor obrigatório."
+									size="15" value="#{authenticatorBean.usuario.senha}" />
+
+							</h:panelGrid>
+						</p:panel>
+
+						<p:commandButton id="cmdLogar" value="Logar" styleClass="cmdGeral"
+							onclick="PrimeFaces.cleanWatermarks();"
+							action="#{authenticatorBean.login()}" />
+
+					</h:form>
+				</p:fieldset>
+			</f:view>
+
+</p:panel>
+</ui:define>
+</ui:composition>

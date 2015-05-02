@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<link
+		href="#{facesContext.externalContext.requestContextPath}/css/config.css"
+		rel="stylesheet" type="text/css" />
+	<title></title>
+</h:head>
+<h:body style="font-size:12px; border: 0px">
+	<p:layout fullPage="true">
+		<p:layoutUnit position="north" size="160"
+			styleClass="primefacesColorImg" style="border: 0px">
+			<ui:include src="/topo.xhtml" />
+		</p:layoutUnit>
+
+		<p:layoutUnit id="left" position="west" size="350" resizable="false"
+			closable="false" collapsible="false" header="#{ptpgeral.supervisor}"
+			minSize="200" styleClass="primefacesColorImg">
+			<p:menu model="#{menuBean.model}"/>
+		</p:layoutUnit>
+
+		<p:layoutUnit position="center" styleClass="primefacesColor">
+			<ui:insert name="conteudo" />
+			<!--<h1 class="textCenter">// AQUI É A INTERNA QUE IRA CHAMAR</h1>-->
+		</p:layoutUnit>
+
+	</p:layout>
+</h:body>
+</html>
+

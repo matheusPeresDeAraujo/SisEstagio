@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PROCESS model-entity="JSFProcess">
+ <PROCESS-ITEM NAME="rules:#admin#user#alterar.xhtml"
+  PATH="/admin/user/alterar.xhtml" SHAPE="288,465,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#admin#user#senha.xhtml"
+  PATH="/admin/user/senha.xhtml" SHAPE="256,257,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#admin#curriculo#curriculo.xhtml"
+  PATH="/admin/curriculo/curriculo.xhtml" SHAPE="32,609,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#admin#curriculo#curriculo.xhtml:0"
+   NAME="item" PATH="/admin/curriculo/curriculo.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="alterar::#admin#curriculo#alterar.xhtml"
+    NAME="output" PATH="/admin/curriculo/alterar.xhtml"
+    TARGET="rules:#admin#curriculo#alterar.xhtml" TITLE="alterar" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#admin#curriculo#alterar.xhtml"
+  PATH="/admin/curriculo/alterar.xhtml" SHAPE="240,625,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#admin#aluno#aluno.xhtml"
+  PATH="/admin/aluno/aluno.xhtml" SHAPE="32,721,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#admin#aluno#aluno.xhtml:0" NAME="item"
+   PATH="/admin/aluno/aluno.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="alterar::#admin#aluno#alterar.xhtml"
+    NAME="output" PATH="/admin/aluno/alterar.xhtml"
+    TARGET="rules:#admin#aluno#alterar.xhtml" TITLE="alterar" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="consulta::#admin#aluno#consulta.xhtml"
+    NAME="output1" PATH="/admin/aluno/consulta.xhtml"
+    TARGET="rules:#admin#aluno#consulta.xhtml" TITLE="consulta" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="senha::#admin#aluno#senha.xhtml"
+    NAME="output2" PATH="/admin/aluno/senha.xhtml"
+    TARGET="rules:#admin#aluno#senha.xhtml" TITLE="senha" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#admin#aluno#alterar.xhtml"
+  PATH="/admin/aluno/alterar.xhtml" SHAPE="240,737,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#admin#aluno#consulta.xhtml"
+  PATH="/admin/aluno/consulta.xhtml" SHAPE="256,881,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#admin#empresa#empresa.xhtml"
+  PATH="/admin/empresa/empresa.xhtml" SHAPE="32,977,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#admin#empresa#empresa.xhtml:0" NAME="item"
+   PATH="/admin/empresa/empresa.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="alterar::#admin#empresa#alterar.xhtml"
+    NAME="output" PATH="/admin/empresa/alterar.xhtml"
+    TARGET="rules:#admin#empresa#alterar.xhtml" TITLE="alterar" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="consulta::#admin#empresa#consulta.xhtml"
+    NAME="output1" PATH="/admin/empresa/consulta.xhtml"
+    TARGET="rules:#admin#empresa#consulta.xhtml" TITLE="consulta" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#admin#empresa#consulta.xhtml"
+  PATH="/admin/empresa/consulta.xhtml" SHAPE="256,1137,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#admin#empresa#alterar.xhtml"
+  PATH="/admin/empresa/alterar.xhtml" SHAPE="256,993,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#admin#projetoEstagio#projetoEstagio.xhtml"
+  PATH="/admin/projetoEstagio/projetoEstagio.xhtml" SHAPE="32,865,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#admin#projetoEstagio#projetoEstagio.xhtml:0"
+   NAME="item" PATH="/admin/projetoEstagio/projetoEstagio.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="alterar::#admin#projetoEstagio#alterar.xhtml" NAME="output"
+    PATH="/admin/projetoEstagio/alterar.xhtml"
+    TARGET="rules:#admin#projetoEstagio#alterar.xhtml" TITLE="alterar" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#admin#projetoEstagio#alterar.xhtml"
+  PATH="/admin/projetoEstagio/alterar.xhtml" SHAPE="240,1361,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#admin#projetoFinal#alterar.xhtml"
+  PATH="/admin/projetoFinal/alterar.xhtml" SHAPE="240,1585,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#admin#projetoFinal#projetoFinal.xhtml"
+  PATH="/admin/projetoFinal/projetoFinal.xhtml" SHAPE="32,1681,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#admin#projetoFinal#projetoFinal.xhtml:0"
+   NAME="item" PATH="/admin/projetoFinal/projetoFinal.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="alterar::#admin#projetoFinal#alterar.xhtml"
+    NAME="output" PATH="/admin/projetoFinal/alterar.xhtml"
+    TARGET="rules:#admin#projetoFinal#alterar.xhtml" TITLE="alterar" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM
+  NAME="rules:#admin#relatorioAcompanhamento#relatorioAcompanhamento.xhtml"
+  PATH="/admin/relatorioAcompanhamento/relatorioAcompanhamento.xhtml"
+  SHAPE="32,1681,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM
+   ID="rules:#admin#relatorioAcompanhamento#relatorioAcompanhamento.xhtml:0"
+   NAME="item"
+   PATH="/admin/relatorioAcompanhamento/relatorioAcompanhamento.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="alterar::#admin#relatorioAcompanhamento#alterar.xhtml"
+    NAME="output" PATH="/admin/relatorioAcompanhamento/alterar.xhtml"
+    TARGET="rules:#admin#relatorioAcompanhamento#alterar.xhtml"
+    TITLE="alterar" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#admin#relatorioAcompanhamento#alterar.xhtml"
+  PATH="/admin/relatorioAcompanhamento/alterar.xhtml"
+  SHAPE="240,1921,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#admin#relatorioMensal#relatorioMensal.xhtml"
+  PATH="/admin/relatorioMensal/relatorioMensal.xhtml"
+  SHAPE="32,1121,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM
+   ID="rules:#admin#relatorioMensal#relatorioMensal.xhtml:0" NAME="item"
+   PATH="/admin/relatorioMensal/relatorioMensal.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="alterar::#admin#relatorioMensal#alterar.xhtml" NAME="output"
+    PATH="/admin/relatorioMensal/alterar.xhtml"
+    TARGET="rules:#admin#relatorioMensal#alterar.xhtml" TITLE="alterar" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="consulta::#admin#relatorioMensal#consulta.xhtml" NAME="output1"
+    PATH="/admin/relatorioMensal/consulta.xhtml"
+    TARGET="rules:#admin#relatorioMensal#consulta.xhtml"
+    TITLE="consulta" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#admin#relatorioMensal#alterar.xhtml"
+  PATH="/admin/relatorioMensal/alterar.xhtml" SHAPE="256,1393,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#admin#relatorioMensal#consulta.xhtml"
+  PATH="/admin/relatorioMensal/consulta.xhtml" SHAPE="256,2177,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#admin#termoCompromisso#alterar.xhtml"
+  PATH="/admin/termoCompromisso/alterar.xhtml" SHAPE="288,2241,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM
+  NAME="rules:#admin#termoCompromisso#termoCompromisso.xhtml"
+  PATH="/admin/termoCompromisso/termoCompromisso.xhtml"
+  SHAPE="32,2273,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM
+   ID="rules:#admin#termoCompromisso#termoCompromisso.xhtml:0"
+   NAME="item" PATH="/admin/termoCompromisso/termoCompromisso.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="alterar::#admin#termoCompromisso#alterar.xhtml" NAME="output"
+    PATH="/admin/termoCompromisso/alterar.xhtml"
+    TARGET="rules:#admin#termoCompromisso#alterar.xhtml" TITLE="alterar" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="consulta::#admin#termoCompromisso#consulta.xhtml" NAME="output1"
+    PATH="/admin/termoCompromisso/consulta.xhtml"
+    TARGET="rules:#admin#termoCompromisso#consulta.xhtml"
+    TITLE="consulta" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#admin#termoCompromisso#consulta.xhtml"
+  PATH="/admin/termoCompromisso/consulta.xhtml" SHAPE="256,2545,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#admin#termoAditivo#termoAditivo.xhtml"
+  PATH="/admin/termoAditivo/termoAditivo.xhtml" SHAPE="32,2529,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#admin#termoAditivo#termoAditivo.xhtml:0"
+   NAME="item" PATH="/admin/termoAditivo/termoAditivo.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="alterar::#admin#termoAditivo#alterar.xhtml"
+    NAME="output" PATH="/admin/termoAditivo/alterar.xhtml"
+    TARGET="rules:#admin#termoAditivo#alterar.xhtml" TITLE="alterar" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#admin#termoAditivo#alterar.xhtml"
+  PATH="/admin/termoAditivo/alterar.xhtml" SHAPE="240,2769,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#admin#distrato#distrato.xhtml"
+  PATH="/admin/distrato/distrato.xhtml" SHAPE="32,2865,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#admin#distrato#distrato.xhtml:0" NAME="item"
+   PATH="/admin/distrato/distrato.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="alterar::#admin#distrato#alterar.xhtml"
+    NAME="output" PATH="/admin/distrato/alterar.xhtml"
+    TARGET="rules:#admin#distrato#alterar.xhtml" TITLE="alterar" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#admin#distrato#alterar.xhtml"
+  PATH="/admin/distrato/alterar.xhtml" SHAPE="240,2993,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#admin#aluno#senha.xhtml"
+  PATH="/admin/aluno/senha.xhtml" SHAPE="272,1169,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#admin#user#user.xhtml"
+  PATH="/admin/user/user.xhtml" SHAPE="32,465,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#admin#user#user.xhtml:0" NAME="item"
+   PATH="/admin/user/user.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="alterar::#admin#user#alterar.xhtml"
+    NAME="output" PATH="/admin/user/alterar.xhtml"
+    TARGET="rules:#admin#user#alterar.xhtml" TITLE="alterar" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="senha::#admin#user#senha.xhtml"
+    NAME="output1" PATH="/admin/user/senha.xhtml"
+    TARGET="rules:#admin#user#senha.xhtml" TITLE="senha" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+</PROCESS>
